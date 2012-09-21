@@ -1,0 +1,26 @@
+[user]
+	name = Perry A. Branch
+[alias]
+	cfg = config
+	gcfg = config --global
+
+        lga = log --all --graph --oneline --decorate
+        lg = log --all --graph --oneline --decorate -10
+	lo = log --oneline --decorate -10
+
+	stat = status -s
+        df = diff
+        br = branch
+
+        co = checkout
+	ci = commit
+	amend = commit --amend
+	rb = rebase
+	pop = stash pop
+	bi = bisect
+	addall = add -A
+	unstage = reset HEAD
+[color]
+        ui = true
+[diff]
+	tool = vimdiff

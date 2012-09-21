@@ -1,0 +1,28 @@
+alias asroot="sudo -u root"
+
+psgrep()
+{
+	ps aux | grep $1 | grep -v "grep $1"
+}
+alias psg=psgrep
+
+alias cls="clear"
+alias ..='cd ..'
+alias ...='cd ..; cd ..'
+
+alias ls='ls --color=tty'
+alias l.='ls -d .*'
+alias ll.='ls -dl .*'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+
+alias md='mkdir'
+alias rd='rmdir'
+
+alias vi='vim'
+
+alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+
+# vvvvv aliases to be organized and documented vvvvv
+

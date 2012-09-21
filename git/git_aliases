@@ -1,0 +1,16 @@
+alias g='git'
+alias gco='git checkout'
+alias gad='git add'
+alias grm='git rm'
+alias gmv='git mv'
+alias gun='git reset HEAD'
+alias gci='git commit'
+alias grb='git rebase'
+alias gst='git status -s'
+alias gdf='git diff'
+
+# vvvvv aliases to be organized and documented vvvvv
+
+alias glg='git lg'
+alias gdf='git diff'
+

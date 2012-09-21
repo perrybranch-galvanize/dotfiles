@@ -1,0 +1,29 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=256m"
+
+if [ -f ~/.aliases ]; then
+	. ~/.aliases
+fi
+
+if [ -f ~/.git_aliases ]; then
+	. ~/.git_aliases
+fi
+
+if [ -f ~/.tmux_aliases ]; then
+	. ~/.tmux_aliases
+fi
+
+if [ -f ~/.local_aliases ]; then
+	. ~/.local_aliases
+fi
+
+if [ -f ~/.project_aliases ]; then
+	. ~/.project_aliases
+fi
+
