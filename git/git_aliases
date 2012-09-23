@@ -1,16 +1,32 @@
 alias g='git'
-alias gco='git checkout'
-alias gad='git add'
-alias grm='git rm'
-alias gmv='git mv'
-alias gun='git reset HEAD'
-alias gci='git commit'
-alias grb='git rebase'
-alias gst='git status -s'
-alias gdf='git diff'
+
+### These aliases are not from the .gitconfig file
+alias gad='g add'
+alias grm='g rm'
+alias gmv='g mv'
+alias gun='g reset HEAD'
+alias gst='g status -s'
+
+### TODO: script to create these from 'git config --global -l'
+alias gcfg='g config'
+alias ggcfg='g config --global'
+
+alias glga='g log --all --graph --oneline --decorate'
+alias glg='g log --all --graph --oneline --decorate -10'
+alias glo='g log --oneline --decorate -10'
+
+alias gstat='g status -s'
+alias gdf='g diff'
+alias gbr='g branch'
+
+alias gco='g checkout'
+alias gci='g commit'
+alias gamend='g commit --amend'
+alias grb='g rebase'
+alias gpop='g stash pop'
+alias gbi='g bisect'
+alias gaddall='g add -A'
+alias gunstage='g reset HEAD'
 
 # vvvvv aliases to be organized and documented vvvvv
-
-alias glg='git lg'
-alias gdf='git diff'
 

@@ -1,18 +1,19 @@
 [user]
-	name = Perry A. Branch
+	name = Perry Branch
+	email = perrybranch@gmail.com
 [alias]
 	cfg = config
 	gcfg = config --global
 
-        lga = log --all --graph --oneline --decorate
-        lg = log --all --graph --oneline --decorate -10
+	lga = log --all --graph --oneline --decorate
+	lg = log --all --graph --oneline --decorate -10
 	lo = log --oneline --decorate -10
 
 	stat = status -s
-        df = diff
-        br = branch
+	df = diff
+	br = branch
 
-        co = checkout
+	co = checkout
 	ci = commit
 	amend = commit --amend
 	rb = rebase
@@ -21,6 +22,6 @@
 	addall = add -A
 	unstage = reset HEAD
 [color]
-        ui = true
+	ui = true
 [diff]
 	tool = vimdiff
