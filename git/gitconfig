@@ -25,3 +25,5 @@
 	ui = true
 [diff]
 	tool = vimdiff
+[core]
+	excludesfile = ~/.cvsignore
