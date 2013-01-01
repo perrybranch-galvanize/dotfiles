@@ -47,8 +47,6 @@
 	st = status -sb
 [color]
 	ui = auto
-[core]
-	excludesfile = /home/perry/.cvsignore
 [diff]
 	guitool = kdiff3
 [interactive]
