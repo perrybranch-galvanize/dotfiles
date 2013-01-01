@@ -30,6 +30,8 @@ export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=256m"
 # Autosave VIM buffers before executing a terminal command
 [ ! -f ~/.vim/bundle/tmux-config/tmux-autowrite/autowrite-vim.sh ] || . ~/.vim/bundle/tmux-config/tmux-autowrite/autowrite-vim.sh
 
+[ ! -f ~/.extra ] || . ~/.extra
+
 [ ! -f ~/.aliases ] || . ~/.aliases
 
 [ ! -f ~/.git_aliases ] || . ~/.git_aliases
