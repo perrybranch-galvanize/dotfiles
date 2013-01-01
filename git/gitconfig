@@ -1,9 +1,8 @@
 [user]
 	name = Perry A Branch
-	email = perrybranch@gmail.com
 [alias]
-	fixup = !sh -c 'git commit --fixup ' -
-	squash = !sh -c 'git commit --squash ' -
+	fixup = !sh -c 'git commit --fixup=$1' -
+	squash = !sh -c 'git commit --squash=$1' -
 
 	bi = bisect
 	br = branch
@@ -25,7 +24,7 @@
 
 	lga = log --graph --oneline --decorate --all
 	lg = log --graph --oneline --decorate -15
-	log = log --simplify-merges
+#	log = log --simplify-merges
 
 	m = merge
 	mt = mergetool
@@ -38,14 +37,18 @@
 
 	update = remote update
 
+	setto = reset --hard
 	unstage = reset HEAD
 	undo = reset ORIG_HEAD
 
-	sl = shortlog
 	sw = show -M -w
+	last = show -s
+
 	pop = stash pop
 	st = status -sb
 [color]
+	ui = auto
+[column]
 	ui = auto
 [diff]
 	guitool = kdiff3
@@ -59,3 +62,5 @@
 	keepbackup = false
 [rebase]
 	autosquash = true
+[rerere]
+	enabled = true
