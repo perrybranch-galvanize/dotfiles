@@ -1,0 +1,35 @@
+# Set PATH so it includes user's private directories if they exist
+## define append_path and prepend_path to add directory paths, e.g. PATH, MANPATH
+
+# add to end of path
+append_path()
+{
+  if ! eval test -z "\"\${$1##*:$2:*}\"" -o -z "\"\${$1%%*:$2}\"" -o -z "\"\${$1##$2:*}\"" -o -z "\"\${$1##$2}\"" ; then
+    if [ -d "$2" ]; then eval "$1=\$$1:$2"; fi
+  fi
+}
+
+# add to front of path
+prepend_path()
+{
+  if ! eval test -z "\"\${$1##*:$2:*}\"" -o -z "\"\${$1%%*:$2}\"" -o -z "\"\${$1##$2:*}\"" -o -z "\"\${$1##$2}\"" ; then
+	if [ -d "$2" ]; then eval "$1=$2:\$$1"; fi
+  fi
+}
+
+# PATH stuff
+export JAVA_HOME=/c/java/jdk1.6.0_37
+export CLASSPATH=.
+prepend_path PATH ${JAVA_HOME}/bin
+
+export M2_HOME=/opt/maven
+export M2=$M2_HOME/bin
+prepend_path PATH ${M2}
+
+prepend_path PATH ${HOME}/bin
+prepend_path PATH ${HOME}/scripts
+
+append_path PATH /opt/kdiff3
+append_path PATH /opt/ruby/bin
+
+export PATH
