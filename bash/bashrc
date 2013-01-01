@@ -7,6 +7,10 @@ fi
 
 export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=256m"
 
+if [ -f ~/.vim/bundle/tmux-config/tmux-autowrite/autowrite-vim.sh]
+	. ~/.vim/bundle/tmux-config/tmux-autowrite/autowrite-vim.sh
+fi
+
 if [ -f ~/.aliases ]; then
 	. ~/.aliases
 fi
