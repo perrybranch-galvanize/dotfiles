@@ -1,29 +1,63 @@
 [user]
-	name = Perry Branch
+	name = Perry A Branch
 	email = perrybranch@gmail.com
 [alias]
+	fixup = !sh -c 'git commit --fixup ' -
+	squash = !sh -c 'git commit --squash ' -
+
+	bi = bisect
+	br = branch
+	co = checkout
+
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	cps = cherry-pick --skip
+
+	ci = commit
+	amend = commit --amend
+
 	cfg = config
 	gcfg = config --global
 
-	lga = log --all --graph --oneline --decorate
-	lg = log --all --graph --oneline --decorate -10
-	lo = log --oneline --decorate -10
+	df = diff -M -w
+	dt = difftool
 
-	stat = status -s
-	df = diff
-	br = branch
+	lga = log --graph --oneline --decorate --all
+	lg = log --graph --oneline --decorate -15
+	log = log --simplify-merges
 
-	co = checkout
-	ci = commit
-	amend = commit --amend
+	m = merge
+	mt = mergetool
+
 	rb = rebase
-	pop = stash pop
-	bi = bisect
-	addall = add -A
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive --autosquash
+	rbs = rebase --skip
+
+	update = remote update
+
 	unstage = reset HEAD
+	undo = reset ORIG_HEAD
+
+	sl = shortlog
+	sw = show -M -w
+	pop = stash pop
+	st = status -sb
 [color]
-	ui = true
-[diff]
-	tool = vimdiff
+	ui = auto
 [core]
-	excludesfile = ~/.cvsignore
+	excludesfile = /home/perry/.cvsignore
+[diff]
+	guitool = kdiff3
+[interactive]
+	singlekey = true
+[merge]
+	tool = kdiff3
+	defaulttoupstream = true
+	log = true
+[mergetool]
+	keepbackup = false
+[rebase]
+	autosquash = true
