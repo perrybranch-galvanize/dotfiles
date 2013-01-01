@@ -1,0 +1,4 @@
+alias att='tmux attach -t'
+
+# vvvvv aliases to be organized and documented vvvvv
+
