@@ -1,33 +1,42 @@
-# .bashrc
+# ~/.bashrc: executed by bash(1) for non-login shells.
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# don't put duplicate lines in the history. See bash(1) for more options
+# don't overwrite GNU Midnight Commander's setting of `ignorespace'.
+HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# fancy prompt (w/ git info)
+[ ! -f ~/.bash_prompt ] || . ~/.bash_prompt
+
+# enable programmable completion features
+if [ -f ~/bash_completion ] && ! shopt -oq posix; then
+    . ~/bash_completion
 fi
 
+# Where should this go?
 export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=256m"
 
-if [ -f ~/.vim/bundle/tmux-config/tmux-autowrite/autowrite-vim.sh]
-	. ~/.vim/bundle/tmux-config/tmux-autowrite/autowrite-vim.sh
-fi
+# Autosave VIM buffers before executing a terminal command
+[ ! -f ~/.vim/bundle/tmux-config/tmux-autowrite/autowrite-vim.sh ] || . ~/.vim/bundle/tmux-config/tmux-autowrite/autowrite-vim.sh
 
-if [ -f ~/.aliases ]; then
-	. ~/.aliases
-fi
+[ ! -f ~/.aliases ] || . ~/.aliases
 
-if [ -f ~/.git_aliases ]; then
-	. ~/.git_aliases
-fi
+[ ! -f ~/.git_aliases ] || . ~/.git_aliases
 
-if [ -f ~/.tmux_aliases ]; then
-	. ~/.tmux_aliases
-fi
+[ ! -f ~/.tmux_aliases ] || . ~/.tmux_aliases
 
-if [ -f ~/.local_aliases ]; then
-	. ~/.local_aliases
-fi
+[ ! -f ~/.local_aliases ] || . ~/.local_aliases
 
-if [ -f ~/.project_aliases ]; then
-	. ~/.project_aliases
-fi
+[ ! -f ~/.project_aliases ] || . ~/.project_aliases
 
