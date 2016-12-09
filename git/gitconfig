@@ -1,8 +1,14 @@
 [user]
 	name = Perry A Branch
+	email = git@notrashmail.com
+[url "git@github.com:"]
+	insteadOf = gh:
+[url "git@bitbucket.org:"]
+	insteadOf = bb:
 [alias]
 	fixup = !sh -c 'git commit --fixup=$1' -
 	squash = !sh -c 'git commit --squash=$1' -
+	squashall = !sh -c 'git reset --hard @{u} && git merge --squash @{1} && git commit ' -
 
 	bi = bisect
 	br = branch
@@ -11,6 +17,7 @@
 	cp = cherry-pick
 	cpa = cherry-pick --abort
 	cpc = cherry-pick --continue
+	cpq = cherry-pick --quit
 	cps = cherry-pick --skip
 
 	ci = commit
@@ -20,10 +27,14 @@
 	gcfg = config --global
 
 	df = diff -M -w
+	dfc = diff --find-renames --ignore-all-space --cached
+	changed = diff --find-renames --ignore-all-space --name-status
+	dfsm = diff --find-renames --ignore-all-space --submodule --ignore-submodules=none
 	dt = difftool
 
-	lga = log --graph --oneline --decorate --all
 	lg = log --graph --oneline --decorate -15
+	lga = log --graph --oneline --decorate --all
+	lgu = log --oneline --decorate @{u}^..
 #	log = log --simplify-merges
 
 	m = merge
@@ -52,6 +63,8 @@
 	ui = auto
 [diff]
 	guitool = kdiff3
+[difftool "kdiff3"]
+	path = /c/opt/KDiff3/kdiff3
 [interactive]
 	singlekey = true
 [merge]
