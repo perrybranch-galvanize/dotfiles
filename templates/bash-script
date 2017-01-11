@@ -1,0 +1,18 @@
+#!/bin/env bash
+#
+_usage() {
+    cat <<__end_of_usage__
+
+Usage: $(basename $0) ...
+
+__end_of_usage__
+}
+
+# unofficial "strict mode"
+# https://www.diigo.com/user/pabranch/b/212489386
+set -euo pipefail
+IFS=$'\n\t'
+
+_usage
+
+# vim: ai et ts=4 sw=4 ff=unix ft=sh
