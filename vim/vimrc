@@ -42,3 +42,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " Enable syntax highlighting
 syntax on
+
+" Create swap and backup files outside of local folder if possible
+set directory^=$HOME/.vimtmp//
+set backupdir^=$HOME/.vimtmp//

@@ -17,3 +17,6 @@ win/ == windows specific; share config w/ Dropbox
 gui/ == links to non-commandline apps for PortableApps
 
 
+Used for vim swap and backup files
+
+    $HOME/.vimtmp
