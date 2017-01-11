@@ -25,6 +25,7 @@ if has("autocmd")
   filetype plugin indent on
 endif
 
+set autochdir     " change directory to match document
 set number        " Show line numbers
 set showcmd       " Show (partial) command in status line.
 set showmatch     " Show matching brackets.
