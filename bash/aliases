@@ -2,7 +2,7 @@ alias asroot="sudo -u root"
 
 psgrep()
 {
-	ps aux | grep $1 | grep -v "grep $1"
+	ps auxw | grep "$1" | grep -v "grep $1"
 }
 alias psg=psgrep
 
