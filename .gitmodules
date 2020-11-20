@@ -1,12 +1,12 @@
 [submodule "vim/vim/bundle/vim-fugitive"]
-	path = vim/vim/bundle/vim-fugitive
+	path = vim/dotvim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 	branch = master
 [submodule "vim/vim/bundle/vim-surround"]
-	path = vim/vim/bundle/vim-surround
+	path = vim/dotvim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
 	branch = master
 [submodule "vim/vim/bundle/tmux-config"]
-	path = vim/vim/bundle/tmux-config
+	path = vim/dotvim/bundle/tmux-config
 	url = git://github.com/pivotal/tmux-config.git
 	branch = master

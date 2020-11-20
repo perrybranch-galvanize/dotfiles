@@ -2,7 +2,7 @@
 	name = Perry A Branch
 	email = github@notrashmail.com
 [core]
-	excludesFile = $HOME/.gitignore_global
+	excludesFile = ~/.gitignore_global
 
 ### GitHub
 
@@ -54,11 +54,11 @@
 	lg = log --graph --oneline --decorate -15
 	lga = log --all --oneline --graph --decorate
 	lgu = log --graph --oneline --decorate @{u}^..
-	ls = log --pretty=format:%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an] --decorate --date=relative -15
-	lsu = log --pretty=format:%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an] --decorate --date=relative -15 @{u}^..
-	lsg = log --pretty=format:%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an] --decorate --date=relative -15 --graph
-	ll = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an:%ad] --decorate --numstat --summary --date=relative -10
-	llu = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an:%ad] --decorate --numstat --summary --date=relative -10 @{u}^..
+	ls = log --pretty=format:%C(yellow)%h\\ %C(green)[%ad]%C(auto)%d\\ %Creset%s%Cblue\\ [%an] --decorate --date=relative -15
+	lsu = ls @{u}^..
+	lsg = ls --graph
+	ll = log --pretty=format:%C(yellow)%h%C(auto)%d\\ %Creset%s%Cblue\\ [%an|%ad] --decorate --numstat --summary --date=relative -10
+	llu = ll @{u}^..
 	lu = log --oneline --decorate @{u}^..
 	lc = "!f() { git ll $1^..$1; }; f"
 	lnc = log --pretty=format:%h\\ %s\\ [%cn]
