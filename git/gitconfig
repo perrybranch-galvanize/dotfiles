@@ -1,10 +1,25 @@
 [user]
 	name = Perry A Branch
-	email = git@notrashmail.com
-[url "git@github.com:"]
+	email = github@notrashmail.com
+[core]
+	excludesFile = $HOME/.gitignore_global
+
+### GitHub
+
+#[url "https://caa3c62781f3be0e5826d8913e8bdcb76dc7d73a@github.com/"]
+#	insteadOf = https://nossh@github.com/
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[url "ssh://git@github.com/"]
 	insteadOf = gh:
-[url "git@bitbucket.org:"]
+
+### BitBucket
+
+[url "ssh://git@bitbucket.com/"]
+	insteadOf = https://bitbucket.com/
+[url "ssh://git@bitbucket.org/"]
 	insteadOf = bb:
+
 [alias]
 	fixup = !sh -c 'git commit --fixup=$1' -
 	squash = !sh -c 'git commit --squash=$1' -
@@ -21,24 +36,39 @@
 	cps = cherry-pick --skip
 
 	ci = commit
-	amend = commit --amend
+	amend = commit --amend --no-edit
+	amend-message = commit --amend
 
 	cfg = config
 	gcfg = config --global
 
 	df = diff -M -w
+	dfw = diff -M -w --word-diff
 	dfc = diff --find-renames --ignore-all-space --cached
+	dfcw = diff --find-renames --ignore-all-space --word-diff --cached
 	changed = diff --find-renames --ignore-all-space --name-status
 	dfsm = diff --find-renames --ignore-all-space --submodule --ignore-submodules=none
 	dt = difftool
+	dty = difftool -y
 
 	lg = log --graph --oneline --decorate -15
-	lga = log --graph --oneline --decorate --all
-	lgu = log --oneline --decorate @{u}^..
+	lga = log --all --oneline --graph --decorate
+	lgu = log --graph --oneline --decorate @{u}^..
+	ls = log --pretty=format:%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an] --decorate --date=relative -15
+	lsu = log --pretty=format:%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an] --decorate --date=relative -15 @{u}^..
+	lsg = log --pretty=format:%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an] --decorate --date=relative -15 --graph
+	ll = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an:%ad] --decorate --numstat --summary --date=relative -10
+	llu = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an:%ad] --decorate --numstat --summary --date=relative -10 @{u}^..
+	lu = log --oneline --decorate @{u}^..
+	lc = "!f() { git ll $1^..$1; }; f"
+	lnc = log --pretty=format:%h\\ %s\\ [%cn]
+	fl = log -u
+	filelog = log -u
 #	log = log --simplify-merges
 
 	m = merge
 	mt = mergetool
+	mty = mergetool -y
 
 	rb = rebase
 	rba = rebase --abort
@@ -46,29 +76,35 @@
 	rbi = rebase --interactive --autosquash
 	rbs = rebase --skip
 
-	update = remote update
+	remotes = remote -v
+	up = remote update
+	upp = remote update -p
 
-	setto = reset --hard
-	unstage = reset HEAD
+	forcepush = push --force-with-lease
+
+	discard = reset --hard HEAD^
+	hardreset = reset --hard
+	unstage = reset HEAD --
 	undo = reset ORIG_HEAD
 
-	sw = show -M -w
+	shw = show -M -w
 	last = show -s
 
 	pop = stash pop
 	st = status -sb
+	swap = checkout @{-1}
+	tags = tag -l
 [color]
 	ui = auto
 [column]
 	ui = auto
-[diff]
-	guitool = kdiff3
-[difftool "kdiff3"]
-	path = /c/opt/KDiff3/kdiff3
+[core]
+	autocrlf = input
+	safecrlf = warn
+	ignorecase = false
 [interactive]
 	singlekey = true
 [merge]
-	tool = kdiff3
 	defaulttoupstream = true
 	log = true
 [mergetool]
@@ -77,3 +113,18 @@
 	autosquash = true
 [rerere]
 	enabled = true
+[branch]
+	autoSetupRebase = always
+[pull]
+	ff = only
+[push]
+	default = current
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+#[credential]
+#	helper = osxkeychain
+[init]
+	defaultBranch = main
