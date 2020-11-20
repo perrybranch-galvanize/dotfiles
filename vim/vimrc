@@ -3,7 +3,7 @@
 set nocompatible
 
 " Automatically add any extenstions found in .vim/bundle
-call pathogen#infect()
+"call pathogen#infect()
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -18,7 +18,7 @@ if has('mouse')
 endif
 
 set background=dark
-colors peaksea
+"colors peaksea
 
 " Load indentation rules and plugins according to the detected filetype.
 if has("autocmd")
@@ -45,5 +45,5 @@ nnoremap <leader><space> :nohlsearch<CR>
 syntax on
 
 " Create swap and backup files outside of local folder if possible
-set directory^=$HOME/.vimtmp//
-set backupdir^=$HOME/.vimtmp//
+set directory^=$HOME/.vimtmp/
+set backupdir^=$HOME/.vimtmp/
