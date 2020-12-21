@@ -1,0 +1,1000 @@
+g ci -am 'expand instructions for using the sandbox courses and cohorts'
+vim perry-*.yaml
+vim /Users/perry.branch/.vimrc 
+cd ~/projects/curriculum/github/pabranch/
+ls ../gSchool/
+ll ../gSchool/
+tree .
+tree galvanize-ent-se-lms pabranch
+ping -n 5 192.167.100.1
+ping -i 5 192.167.100.1
+ping -i 5 192.168.100.1
+echo "ping -i 5 192.168.100.1" | pbcopy
+cd
+cd -
+cd pabranch/
+cd ../cnd-course/ent-curriculum-block-template/
+mv ent-curriculum-block-template/ ..
+g -C ent-curriculum-block-template g st
+g -C ent-curriculum-block-template
+g -C {.,cnd-cours/}ent-curriculum-block-template git remote -v
+g -C {.,cnd-cours}/ent-curriculum-block-template git remote -v
+for repo in {.,cnd-cours}/ent-curriculum-block-template; do echo $repo; done
+for repo in {.,cnd-cours}/ent-curriculum-block-template; do echo $repo; git -C $repo remote -v; done
+for repo in {.,cnd-course}/ent-curriculum-block-template; do echo $repo; git -C $repo remote -v; done
+for repo in {.,cnd-course}/ent-curriculum-block-template; do printf "\n$repo\n"; git -C $repo remote -v; done
+ls cnd-course/
+man diff
+diff -x '.git' ent-curriculum-block-template cnd-course/ent-curriculum-block-template
+for repo in {.,cnd-course}/ent-curriculum-block-template; do printf "\n$repo\n"; git -C $repo status; done
+for repo in {.,cnd-course}/ent-curriculum-block-template; do printf "\n$repo\n"; git -C $repo lga; done
+rm -rf cnd-course/ent-curriculum-block-template/
+cd ent-curriculum-block-template/
+g remote rename jenn mine
+g remote add upstream gh:galvanize-ent-se-lms/200-block-template
+grep url ~/.gitconfig 
+vim ~/.gitconfig
+g remote add origin gh:pabranch/200-block-template
+g ls upstream/master
+g ls mine/master 
+g ls gschool/master 
+g co origin/master -B master
+cp units/100-sample-unit/* 00-sample-unit
+g hardreset @
+g df --stat upstream/master 
+g co master
+g df upstream/master --summary
+g df upstream/master --summary -R
+g co upstream/master -- units
+g reset
+ls units/
+mv units/* .
+cp 100-sample-unit/* 00-sample-unit/
+rmdir 100-sample-unit units/
+ll 100-sample-unit/
+ll -A 100-sample-unit/
+rm -r 100-sample-unit
+rm -r units
+mv {,1}00-sample-unit
+g add -A
+g add 00-sample-unit
+g hardreset upstream/master
+g mv units/* .
+g mv assets/100-sample-unit/* 100-sample-unit/
+g mv assets/200-sample-unit-2/* 200-sample-unit-2/
+st
+g ls assets/
+g mv assets/000-general common-assets
+tree assets/
+rm -r assets/
+vim README.md 
+rm autoconfig.yaml 
+g ls origin/master 
+g ci -m 'for simplicity, move everything out of the units & assets directories'
+g grep
+g grep units
+mv ent-curriculum-block-template 100-block-template
+mv {1,2}00-block-template/
+cd 200-block-template/
+cat version.json 
+vim version.json 
+learn preview
+cp 200-sample-unit-2/99-survey.md 100-sample-unit/99-survey.md 
+glearn-cli 
+glearn-cli preview .
+uuidgen 
+alias | grep uuid
+env | grep uuid
+uuidgen | tr :upper: :lower:
+uuidgen | tr [:upper:] [:lower:]
+sed -n '/:alpha:/p' 100-sample-unit/99-survey.md 
+sed -n '/:alpha:*/p' 100-sample-unit/99-survey.md 
+sed -n '/[a-f0-9]+-/killroy/p' 100-sample-unit/99-survey.md 
+sed -n 's/[a-f0-9]+-/killroy/p' 100-sample-unit/99-survey.md 
+sed -n '/[a-f0-9]/p' 100-sample-unit/99-survey.md
+sed -n 's/[a-f0-9]/killroy/p' 100-sample-unit/99-survey.md
+sed -n 's/[a-f0-9]-/killroy/p' 100-sample-unit/99-survey.md
+sed -n 's/[a-f0-9]+-/killroy/p' 100-sample-unit/99-survey.md
+sed -n 's/[a-f0-9]{1,}/killroy/p' 100-sample-unit/99-survey.md
+sed -n '/id: /s/[a-f0-9]/killroy/p' 100-sample-unit/99-survey.md
+sed -n '/id: /s/[a-f0-9]-/killroy/p' 100-sample-unit/99-survey.md
+sed -n s/* id:.*/killroy/p' 100-sample-unit/99-survey.md
+sed -n "s/* id:.*/killroy/p" 100-sample-unit/99-survey.md
+sed -n "s/* id:.*/* id: killroy/p" 100-sample-unit/99-survey.md
+sed -n "s/* id:.*/* id: $(uuidgen)/p" 100-sample-unit/99-survey.md
+awk '
+{
+    if ($0 ~ /^[a-fA-F0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$/)
+    {
+        system("uuidgen")
+    }
+    else
+    {
+        print $0
+    }
+}' 100-sample-unit/99-survey.md
+awk '/^* id:/{gsub(
+awk '/^* id:/{
+  gsub(/* id: [a-fA-F0-0].*/, "* id: "system("uuidgen | tr [:upper:] [:lower]", $0)
+{print}
+}
+'
+awk '/^* id:/{
+  gsub(/* id: [a-fA-F0-0].*/, "* id: "system("uuidgen | tr [:upper:] [:lower]", $0)} {print}' 100-sample-unit/98-checkpoint.md 
+awk '/^* id:/{
+  gsub(/* id: [a-fA-F0-0].*/, "* id: "system("uuidgen | tr [:upper:] [:lower]"), $0)} {print}' 100-sample-unit/98-checkpoint.md 
+awk '/^* id:/{
+  gsub(/* id: [a-fA-F0-0].*/, "* id: "system("uuidgen | tr [:upper:] [:lower]"), $0)} {print}' 100-sample-unit/98-checkpoint.md 
+awk '/^* id:/{ $3=system("uuidgen | tr [:upper:] [:lower]")} {print}' 100-sample-unit/98-checkpoint.md 
+awk '/^* id:/{ $3="XXXXX --->"system("uuidgen | tr [:upper:] [:lower]")} {print}' 100-sample-unit/98-checkpoint.md 
+awk '/^* id:/{ $3="XXXXX --->"system("uuidgen | tr [:upper:] [:lower]")} {print}' 100-sample-unit/98-checkpoint.md | less
+awk {print system("uuidgen")} -
+awk {print system("uuidgen")}
+awk {print system("uuidgen");}
+awk {system("uuidgen")}
+awk '{system("uuidgen")}'
+awk '{print}{$0=system("uuidgen")}{print}'
+awk '{print}{$0="system("uuidgen")"}{print}'
+awk '{print}{$1="uuidgen"}{print}'
+awk '{print}{$1="uuidgen" | getline}{print}'
+awk '{print}{cmd="uuidgen"; cmd | getline}{print}'
+awk '{print}{cmd="uuidgen"; cmd | getline; close(cmd)}{print}'
+awk '{print}{"uuidgen" | getline $2; close(cmd)}{print}'
+awk '{print}{cmd="uuidgen"; cmd | getline $2; close(cmd)}{print}'
+awk '{cmd="uuidgen"; cmd | getline $2; close(cmd)}{print}'
+awk '{cmd="uuidgen | tr [:upper:] [:lower:]"; cmd | getline $2; close(cmd)}{print}'
+awk '{cmd="uuidgen | tr [:upper:] [:lower:]"; cmd | getline $3; close(cmd)}{print}'
+awk '/^* id: /{cmd="uuidgen | tr [:upper:] [:lower:]"; cmd | getline $3; close(cmd)}{print}'
+awk '/^* id: /{cmd="uuidgen | tr [:upper:] [:lower:]"; cmd | getline $3; close(cmd)}{print}' 100-sample-unit/10-lesson1.md 
+awk '/^* id: /{cmd="uuidgen | tr [:upper:] [:lower:]"; cmd | getline $3; close(cmd)}{print}' 100-sample-unit/99-survey.md 
+awk '/^* id: /{cmd="uuidgen | tr [:upper:] [:lower:]"; cmd | getline $3; close(cmd)}{print}' 100-sample-unit/99-survey.md > foo
+g co 100-sample-unit/ 200-sample-unit-2/
+mv foo 100-sample-unit/99-survey.md 
+awk '/^* id: /{cmd="uuidgen | tr [:upper:] [:lower:]"; cmd | getline $3; close(cmd)}{print}' 100-sample-unit/99-survey.md > >200-sample-unit-2/99-survey.md 
+g add -u
+awk '/^* id: /{cmd="uuidgen | tr [:upper:] [:lower:]"; cmd | getline $3; close(cmd)}{print}' 100-sample-unit/99-survey.md > 200-sample-unit-2/99-survey.md 
+for f in `ls *-unit*`; do echo $f; done
+ls *-unit*
+ls *-unit*/*
+awk '/^* id: /{cmd="uuidgen | tr [:upper:] [:lower:]"; cmd | getline $3; close(cmd)}{print}' 100-sample-unit/99-survey.md > 200-sample-unit-2/99-survey.md g shw
+chmod +x replace-uuids.awk 
+find ~ -type f -name '*.awk'
+find ~ -type f -name '*.awk' 2>/dev/null
+./replace-uuids.awk 100-sample-unit/98-checkpoint.md 
+vim replace-uuids.awk
+./replace-uuids.awk 100-sample-unit/98-checkpoint.md
+for f in `ls *-unit*/*`; do echo $f; done
+g ci -a
+g log -1
+vim replace-uuids.awk 
+for f in `ls *-unit*/*`; do ./replace-uuids.awk $f; done
+g co .
+cp replace-uuids.awk ~/bin/replace-challenge-ids
+mv replace-uuids.awk ..
+ls -l
+cd ../galvanize-ent-se-lms/200-block-template/
+g grep checkbox
+g remotes
+g shw
+g df origin/master 
+cd ..
+vim 200-block-template/.git/config  ../pabranch/200-block-template/.git/config
+mv 200-block-template{,-old}
+mv ../pabranch/200-block-template/
+mv ../pabranch/200-block-template/ .
+cd ../pabranch/
+ln -s ../galvanize-ent-se-lms/200-block-template .
+ll
+find cnd-course/
+ll -A cnd-course/
+cd ../galvanize-ent-se-lms/
+cd 200-block-template
+g rb upstream/master 
+g rbi upstream/master 
+g mv {200,110}-sample-unit-2/
+g amend
+learn preview . | tr '[' '\n['
+ls ~/bin
+replace-challenge-ids 110-sample-unit-2/*.md
+code .
+for f in `\ls 110-sample-unit-2/*.md`; do echo $f; done
+for f in `\ls 110-sample-unit-2/*.md`; do replace-challenge-ids $f; done
+g add -p
+g amend -a
+g df origin/master
+g push -f
+learn preview .
+g reflog
+g lga -- 110-sample-unit-2/99-survey.md
+g lga -- **/99-survey.md
+g ls --all -- **/99-survey.md
+g ls --all
+g lga -S'checkbox'
+gvim ../../../curriculum-thoughts.md 
+g log --all -S pace
+g shw f5bf00a0fc67a47fdd72108d6074b26e35a20e7d
+git rev-list --all -- '*survey*' | while readln sha; do echo $sha; done
+git rev-list --all -- '*survey*' | while read sha; do echo $sha; done
+pwd
+cd ../../pabranch/
+cd 200-block-template-old/
+git rev-list --all -- '*survey*' | while read sha; do git show --stat $sha; done
+g shw ac689ce32d9f99eeb5c53ceb6636abbe83d420d1
+git rev-list --all -- '*survey*' | 
+git rev-list --all -- '*survey*' | while read sha; do git log -1 --stat $sha; done
+git rev-list --all -- '*survey*' >survey-shas
+git rev-list --all -- '*survey*' | while read sha; do git log -1 $sha; done
+git rev-list --all -- '*survey*' | while read sha; do git ls -1 $sha; done
+git rev-list --all -- '99-survey.md' | while read sha; do git ls -1 $sha; done
+git rev-list --all -- '**/99-survey.md' | while read sha; do git ls -1 $sha; done
+while read sha; do g shw $sha; done <survey-shas 
+while read sha; do g shw $sha -- **/99-survey.md; done <survey-shas 
+g pull
+g reflog -10
+g hardreset @@{2}
+g lga
+g upp
+brew info zoom
+alias curl-ghapi='curl -sSL -H '\''Accept: application/vnd.github.v3+json'\'''
+alias curl-ghapi="curl -sSL -H 'Accept: application/vnd.github.v3+json'"
+curl-ghapi -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/orgs/galvanize-ent-se-lms/repos | jq '.[] | .name, .clone_url'
+alias curl-ghapi='curl -sSL -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $GITHUB_TOKEN"'
+curl-ghapi https://api.github.com/orgs/galvanize-ent-se-lms/repos | jq '.[] | .name, .clone_url'
+curl-ghapi https://api.github.com/orgs/galvanize-ent-se-lms/repos | jq '.[] | .name, .clone_url' >repos
+curl-ghapi https://api.github.com/orgs/galvanize-ent-se-lms/repos | jq -r '.[] | .name, .clone_url' >repos
+while read name url; do echo $name $url; done <repos
+while read name url; do printf "$name ... "; if [ -d $name ]; then printf "exists\n"; else; printf "cloning\n"; git clone $url; done <repos
+while read name url; do printf "$name ... "; if [ -d $name ]; then printf "exists\n"; else; printf "cloning\n"; git clone $url; fi; done <repos
+while read name url; do printf "$name ... "; if [ -d $name ]; then printf "exists\n"; else printf "cloning\n"; git clone $url; fi; done <repos
+while read name url; do printf "$name ... "; if [ -d $name ]; then printf "exists\n"; else printf "cloning\n"; git clone $url; fi; done <(head -1 repos)
+curl-ghapi https://api.github.com/orgs/galvanize-ent-se-lms/repos | jq -r '.[] | "\(.name) \(.clone_url)"' >repos
+cat repos 
+while read name url; do printf "$name ... "; if [ -d $name ]; then printf "exists\n"; else printf "cloning\n"; git clone $url; fi; done < <(head -1 repos)
+rm -rf 200-block-template/
+mv repos ../../galvanize-ent-se-lms/
+alias curl-ghapi
+man ifconfig
+tldr ifconfig
+tldr --update
+cls
+tmux ls
+tmux a
+while IFS=\| read col1 cols; do  printf %10s%-s\\n "$col1 |" " ${cols##*|}"
+done <<\INPUT
+foo|dog|cat|mouse|lion|ox|tiger|bar
+INPUT
+
+while IFS=\| read col1 cols; do  printf %10s%-s\\n "$col1 |" " ${cols##*|}"
+done <<INPUT
+foo|dog|cat|mouse|lion|ox|tiger|bar
+INPUT
+
+while IFS=\| read col1 cols; do  printf %5s%-s\\n "$col1 |" " ${cols##*|}"
+done <<INPUT
+foo|dog|cat|mouse|lion|ox|tiger|bar
+INPUT
+
+while IFS=\| read col1 cols; do  printf %1s%-s\\n "$col1 |" " ${cols##*|}"
+done <<INPUT
+foo|dog|cat|mouse|lion|ox|tiger|bar
+INPUT
+
+while IFS=\| read col1 cols; do  printf %10s%-s\\n "$col1 |" " ${cols##*|}"
+done <<INPUT
+foo|dog|cat|mouse|lion|ox|tiger|bar
+INPUT
+
+while IFS=\| read col1 cols; do  printf %20s%-s\\n "$col1 |" " ${cols##*|}"
+done <<INPUT
+foo|dog|cat|mouse|lion|ox|tiger|bar
+INPUT
+
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host --network host -it nicolargo/glances:dev
+dkr images | head
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host --network host -it nicolargo/glances:latest
+brew update
+tldr eval
+gvim /Users/perry.branch/daily-notes.md 
+tldr -u -p osx cat
+tldr cat
+tldr -v 
+tldr -v cat
+tldr -v
+tldr --version
+git config --global credential.helper
+github
+github --help
+gh --help
+gh help environment
+vim /Users/perry.branch/.gitconfig 
+vim /Users/perry.branch/_snips.txt 
+vim ~/.vimrc
+cd github/galvanize-ent-se-lms/100-cohorts/
+g br
+g remote rename origin upstream
+g remote rename upstream origin
+g remote add mine ssh://git@github.com/pabranch/100-cohorts.git
+g remote add gschool ssh://git@github.com/gSchool/pab-100-cohorts.git
+g co gschool/main -t
+g rb --onto origin/master
+g rb --allow-unrelated-histories --onto origin/master 31d2527
+g tag first 31d2527
+g hardreset gschool/main 
+g rb --onto origin/master first main
+g rb --onto origin/master master
+g br -f master origin/master 
+exit
+g push origin fixup-docker-file 
+g br -m scripts-for-new-testable-project wip
+g br -m wip scripts-for-new-testable-project
+g co npm-update 
+g co fixup-docker-file 
+g br -u upstream/master 
+g br -vv
+g push origin master --force-with-lease 
+g lga upstream/master 
+g lga upstream/master~.. 
+g ls -1 upstream/gschedule 
+g push upstream --delete gschedule
+g push origin --delete gschedule
+g push origin fixup-docker-file --force-with-lease 
+g push origin scripts-for-new-testable-project npm-update subtree 
+g br -r
+g lga -10
+g co remove-old-tools 
+tr ' ' '-' <skill-tree-export.tsv 
+tr ' ' '-' <skill-tree-export.tsv | tr '[:upper:]' '[:lower:]' >name-friendly ski
+tr ' ' '-' <skill-tree-export.tsv | tr '[:upper:]' '[:lower:]' >name-friendly_skill-tree-export.tsv 
+g add name-friendly_skill-tree-export.tsv 
+ls galvanize-ent-se-lms/
+mv github{-orgs,}
+for d in `ls`; do git -C $d remote update --prune; done
+env | grep 'perry.branch'
+git config --global credential.helper
+git config credential.helper
+unset GITHUB_TOKEN
+for d in `ls`; do echo $d; git -C $d remote update --prune; done
+cd pabranch/
+cd 100
+g remote set-url gschool //github.com/gSchool/pab-100-cohorts.git
+g remote set-url origin //github.com/pabranch/100-cohorts.git
+ssh -vT git@github.com
+g fetch origin
+cd ../cnd-course/
+vim .git/config
+grep -R 'ssh://github' *
+grep 'ssh://github' */*/.git/config
+grep -l 'ssh://github' */*/.git/config
+while read cfg; do sed -n 's#ssh://gith#ssh://git@gith/p'; done <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed -n 's#ssh://gith#ssh://git@gith/p'; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed -n 's#ssh://gith#ssh://git@gith#p'; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed -n 's#ssh://gith#ssh://git@gith#'; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed 's#ssh://gith#ssh://git@gith#'; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed 's#ssh://gith#ssh://git@gith#' $cfg; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed -n 's#ssh://gith#ssh://git@gith#p' $cfg; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed -i '' 's#ssh://gith#ssh://git@gith#' $cfg; done < <(grep -l 'ssh://github' */*/.git/config)
+for d in `\ls -d */*/`; do echo $d; git -C $d fetch origin; done
+for d in `\ls -d */*/`; do echo $d; git -C $d remote update --prune; done
+g add .
+g reset
+g add -u
+g add github/README.md 
+g amend-message 
+cd github/
+\ls -d */*/
+cd pabranch/100-cohorts/
+cd 100-cohorts/
+rm -rf 100-cohorts/
+ln -s ../galvanize-ent-se-lms/100-cohorts .
+exit
+cd ~/projects/curriculum/github/pabranch/cnd-course/
+grep -R 'active' *
+grep -R 'active' */.git/*
+cat */.git/config
+cat */.git/config | less
+ls ..
+cat ../100-cohorts/.git/config 
+find . -name config | xargs grep active
+find . -type f -name config | xargs grep active
+cat github/galvanize-ent-se-lms/000-Documentation/.git/config 
+cd github/galvanize-ent-se-lms/
+cd ../pabranch/
+cd cnd-course/
+g cfg submodule.active .
+g ci -m 'modify skill-tree titles to simplify progamatic use'
+g ci -am 'rename repo to match version in galvanize-ent-se-lms'
+ll
+ls -al
+g remote -v
+cd ../../../galvanize-ent-se-lms/
+g remote add gschool ssh://git@github.com/gSchool/pab-200-block-template.git
+vim .git/config 
+code .
+g remote set-url upstream --add --push READONLY
+g mv units/* .
+rmdir units
+g br -avv
+cd -
+cd ../pabranch/cnd-course/200-block-template/
+gh clone pabranch/ent-curriculum-block-template
+gh repo clone pabranch/ent-curriculum-block-template
+cd ent-curriculum-block-template/
+g remote add gschool git@github.com:gSchool/pab-ent-curriculum-block-template.git
+g shw --stat
+g remote rename origin jenn
+cd ../..
+ll -d galvanize-ent-se-lms/*/
+\ll -d galvanize-ent-se-lms/*/
+\ls -dl galvanize-ent-se-lms/*/
+\ls -dl galvanize-ent-se-lms/*/ pabranch/*/ pabranch/*/*/
+cd galvanize-ent-se-lms/
+cd 000-Documentation/
+cd ../../pabranch/cnd-course/200-block-template/
+cat - > ~/asana-export-retro-board.json
+wc -l ~/asana-export-retro-board.json
+vim ~/asana-export-retro-board.json
+brew update
+brew info lua
+ls -l
+cd 200-block-template/
+g df mine/master
+g remotes
+mv 200-block-template ent-curriculum-block-template
+cd ..
+ping -i 5 192.168.100.1
+sed regex
+vim /Users/perry.branch/.bashrc 
+pwd
+mv ../galvanize-ent-se-lms/200-block-template-old/ .
+cd 200-block-template-old/
+g reflog
+vim survey-shas 
+g ls --all
+g ls --all -3
+g df origin/master 
+g df origin/master --stat --summary
+less 00-sample-unit/99-survey.md 
+cd ../../galvanize-ent-se-lms/200-block-template/
+g reflog -- **/99-survey.md | awk '{print $1}' | while read sha; do g shw -- **/99-survey.md; done
+g reflog -- **/99-survey.md 
+g reflog -- **/99-survey.md | awk '{print $1}' | sort -u
+g reflog -- **/99-survey.md | awk '{print $1}' | sort -u | wc -l
+g reflog -- **/99-survey.md
+g reflog -- **/99-survey.md | awk '/amend/{1}'
+g reflog -- **/99-survey.md | awk '/amend/{print}'
+g reflog -- **/99-survey.md | awk '/amend/{print $1}' | while read sha; do g shw -- **/*survey.md; done
+g reflog -S pace
+g shw 4ccc
+g shw 4ccc --stat
+g shw 4ccc:100-sample-unit/99-survey.md >units/100-sample-unit/99-survey.md
+g shw 4ccc:200-sample-unit-2/99-survey.md >units/110-sample-unit-2/99-survey.md
+g ci -am 'replace dummy survey w/ simple example'
+g shw
+g amend -a
+glearn-cli preview .
+g co .
+
+vim units/*/99-survey.md
+gvim /Users/perry.branch/daily-notes.md 
+g lga
+g br -m improve-examples
+g rb upstream/master 
+g push origin
+g upp
+tldr jq
+ping 24.9.50.233
+traceroute 24.9.50.233
+dkr rmi nicolargo/glances:dev
+dkr images | head
+dkr rmi java
+dkr rmi java:again
+dkr rmi java:copy
+dkr images
+dkr rmi galvanize-curriculum-tools auth-assessment-custom-snippet-setup_testenv
+dkr images | sort -k 3u -k 7h
+tldr sort
+cls
+dkr images | sort -k 7h
+dkr rmi node:6
+dkr rmi json-snippet
+cleanup-docker-containers 
+cleanup-docker-images
+github --help
+gh --help
+gh help environment
+vim /Users/perry.branch/.gitconfig 
+vim /Users/perry.branch/_snips.txt 
+vim ~/.vimrc
+cd github/galvanize-ent-se-lms/100-cohorts/
+g remote rename origin upstream
+g remote rename upstream origin
+g remote add mine ssh://git@github.com/pabranch/100-cohorts.git
+g remote add gschool ssh://git@github.com/gSchool/pab-100-cohorts.git
+g co gschool/main -t
+g rb --onto origin/master
+g rb --allow-unrelated-histories --onto origin/master 31d2527
+g tag first 31d2527
+g hardreset gschool/main 
+g rb --onto origin/master first main
+g rb --onto origin/master master
+g br -f master origin/master 
+exit
+g push origin fixup-docker-file 
+g br -m scripts-for-new-testable-project wip
+g br -m wip scripts-for-new-testable-project
+g co npm-update 
+g co fixup-docker-file 
+g br -u upstream/master 
+g br -vv
+g push origin master --force-with-lease 
+g lga upstream/master 
+g lga upstream/master~.. 
+g ls -1 upstream/gschedule 
+g push upstream --delete gschedule
+g push origin --delete gschedule
+g push origin fixup-docker-file --force-with-lease 
+g push origin scripts-for-new-testable-project npm-update subtree 
+g br -r
+g lga -10
+g co remove-old-tools 
+tr ' ' '-' <skill-tree-export.tsv 
+tr ' ' '-' <skill-tree-export.tsv | tr '[:upper:]' '[:lower:]' >name-friendly ski
+tr ' ' '-' <skill-tree-export.tsv | tr '[:upper:]' '[:lower:]' >name-friendly_skill-tree-export.tsv 
+g add name-friendly_skill-tree-export.tsv 
+ls galvanize-ent-se-lms/
+mv github{-orgs,}
+cd galvanize-ent-se-lms/
+for d in `ls`; do git -C $d remote update --prune; done
+env | grep 'perry.branch'
+git config --global credential.helper
+git config credential.helper
+unset GITHUB_TOKEN
+for d in `ls`; do echo $d; git -C $d remote update --prune; done
+cd pabranch/
+cd 100
+g remote set-url gschool //github.com/gSchool/pab-100-cohorts.git
+g remote set-url origin //github.com/pabranch/100-cohorts.git
+ssh -vT git@github.com
+g fetch origin
+cd ../cnd-course/
+vim .git/config
+grep -R 'ssh://github' *
+grep 'ssh://github' */*/.git/config
+grep -l 'ssh://github' */*/.git/config
+while read cfg; do sed -n 's#ssh://gith#ssh://git@gith/p'; done <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed -n 's#ssh://gith#ssh://git@gith/p'; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed -n 's#ssh://gith#ssh://git@gith#p'; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed -n 's#ssh://gith#ssh://git@gith#'; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed 's#ssh://gith#ssh://git@gith#'; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed 's#ssh://gith#ssh://git@gith#' $cfg; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed -n 's#ssh://gith#ssh://git@gith#p' $cfg; done < <(grep -l 'ssh://github' */*/.git/config)
+while read cfg; do sed -i '' 's#ssh://gith#ssh://git@gith#' $cfg; done < <(grep -l 'ssh://github' */*/.git/config)
+for d in `\ls -d */*/`; do echo $d; git -C $d fetch origin; done
+for d in `\ls -d */*/`; do echo $d; git -C $d remote update --prune; done
+g add .
+g reset
+g add -u
+g add github/README.md 
+g amend-message 
+cd github/
+\ls -d */*/
+cd pabranch/100-cohorts/
+rm -rf 100-cohorts/
+ln -s ../galvanize-ent-se-lms/100-cohorts .
+exit
+learn publish
+go build
+glearn-cli 
+glearn-cli -v
+glearn-cli --version
+go 
+go clean install
+go clean
+go install
+glearn-cli version
+brew update
+brew upgrade learn
+gh repo view --web
+brew info learn
+glearn-cli publish
+npx jasmine
+g ci -am 'Micahel Gaffney'
+g amend-message 
+g ls -3
+g tag michael-gaffney
+g rbi origin/master 
+g tag michael-gaffney -f
+g hardreset origin/master 
+cd ../..
+cd ../galvanize-ent-se-lms/200-block-template/
+vim .git/config 
+g co gschool/master -b ent-curriculum-block-template
+g fd
+g add -p
+g df autoconfig.yaml
+g co autoconfig.yaml
+vim 00-sample-unit/9[98]*
+learn preview .
+g br -avv
+ls -l
+ll
+cd 000-Documentation/
+g ls -30
+g df upstream/master -R
+g m upstream/master 
+ping -i 5 192.167.67.1
+ping -i 5 192.168.67.1
+man tr
+vim /Users/perry.branch/bin/list-sections-and-repos.awk 
+less ~/content/copy-curriculum.awk 
+vim /Users/perry.branch/bin/replace-challenge-ids 
+g reflog
+g cls
+g push origin 
+code .
+g upp
+ls -al
+tldr curl
+curl -sSL -H 'Accept: application/vnd.github.v3+json' https://api.github.com/orgs/galvanize-ent-se-lms
+alias curl-ghapi="curl -sSL -H 'Accept: application/vnd.github.v3+json"
+curl-ghapi https://api.github.com/orgs/galvanize-ent-se-lms/repos
+
+alias curl-ghapi="curl -sSL -H 'Accept: application/vnd.github.v3+json"'
+alias curl-ghapi="curl -sSL -H 'Accept: application/vnd.github.v3+json'"
+alias curl-ghapi | pbcopy
+curl-ghapi https://api.github.com/orgs/galvanize-ent-se-lms/repos
+vim README.md
+curl-ghapi https://api.github.com/orgs/galvanize-ent-se-lms/repos | jq -r '.[] | "\(.name) \(.clone_url)"' >repos
+while read name url; do printf "$name ... "; if [ -d $name ]; then printf "exists\n"; else printf "cloning\n"; git clone $url; fi; done < <(repos)
+while read name url; do printf "$name ... "; if [ -d $name ]; then printf "exists\n"; else printf "cloning\n"; git clone $url; fi; done <repos
+vim README.md 
+cat README.md
+# clone any new repos
+while read name url; do     printf "$name ... ";     if [ -d $name ];     then         printf "exists\n";     else         printf "cloning\n";         git clone $url;     fi; done <repos
+ip
+if
+ifconfig
+ifconfig -
+ifconfig -4
+ifconfig | less
+ifconfig | grep inet
+ifconfig inet
+man ifconfig
+tldr ifconfig
+cat README.md 
+alias curl-ghapi='curl -sSL -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $GITHUB_TOKEN"'
+curl-ghapi https://api.github.com/orgs/galvanize-ent-se-lms/repos     | jq -r '.[] | "\(.name) \(.clone_url)"'     >repos
+while read name url; do     printf "$name ... ";     if [ -d $name ];     then         printf "exists\n";     else         printf "cloning\n";         git clone $url;     fi; done <repos
+find --help
+find -h
+find . -type d -maxdepth=1
+man find
+tldr find
+find . -type d -maxdepth 1
+cat repos 
+awk '{print $1}' repos | while read d; do echo $d; git -C $d remote update -p; done
+cd 100-cohorts/
+g remotes
+g br
+g co origin/master -t
+t ls
+g lga
+g df main
+g co main
+g df master 
+cd ..
+awk '{print $1}' repos | while read d; do echo $d; git -C $d status -sb; done
+awk '{print $1}' repos | while read d; do echo $d; git -C $d remotes; done
+awk '{print $1}' repos | while read d; do printf "\n$d/\n"; git -C $d remotes; done
+awk '{print $1}' repos | while read d; do printf "\n$d/\n"; bash; done
+awk '{print $1}' repos | while read d; do printf "\n$d/\n"; $(bash); done
+pwd
+awk '{print $1}' repos | while read d; do printf "\n$d/\n"; $(cd $d; bash); done
+awk '{print $1}' repos | while read d; do printf "\n$d/\n"; $(cd $d; sh); done
+awk '{print $1}' repos | while read d; do printf "\n$d/\n"; $(echo $d); done
+awk '{print $1}' repos | while read d; do printf "\n$d/\n"; `echo $d`; done
+awk '{print $1}' repos | while read d; do { printf "\n$d/\n"; $(echo $d); } done
+awk '{print $1}' repos | while read d; do { # printf "\n$d/\n"; $(echo $d); } done
+awk '{print $1}' repos | while read d; do { # printf "\n$d/\n";$(echo $d); } done
+awk '{print $1}' repos | while read d; do { # printf "\n$d/\n"; \$(echo $d); } done
+cut -f1 repos
+tldr cut
+cut -d' ' -f1 repos
+time for i in {0..10000}; cut -d' ' -f1 repos; done
+time for i in {0..10000}; do cut -d' ' -f1 repos; done
+time for i in {0..10000}; do cut -d' ' -f1 repos >/dev/null; done
+time for i in {0..10000}; do awk 'print $!} >/dev/null; done
+time for i in {0..10000}; do awk 'print $!}' >/dev/null; done
+time for i in {0..10000}; do awk '{print $!}' >/dev/null; done
+time for i in {0..10000}; do awk '{print $!}' repos >/dev/null; done
+awk '{print $1}' repos >/dev/null
+time for i in {0..10000}; do awk '{print $1}' repos >/dev/null; done
+tldr paste
+time for i in {0..3000}; do cut -d' ' -f1 repos >/dev/null; done
+time for j in {1..5}; do time for i in {0..3000}; do cut -d' ' -f1 repos >/dev/null; done; done
+time for i in {0..3000}; do awk '{print $1}' repos >/dev/null; done
+time for j in {1..5}; do time for i in {0..3000}; do awk '{print $1}' repos >/dev/null; done; done; done
+time for j in {1..5}; do time for i in {0..3000}; do awk '{print $1}' repos >/dev/null; done; done
+time for j in {1..5}; do time for i in {0..1000}; do awk '{print $1}' repos >/dev/null; done; done
+time for j in {1..5}; do time for i in {0..1000}; do cut -d' ' -f1 repos >/dev/null; done; done
+cat compare-cut-awk.sh 
+printf 'foo'; sleep 2; printf '\rbar'
+for i in {1.5}; do printf '\r %5d' $i; sleep 1; done
+for i in {1..5}; do printf '\r %5d' $i; sleep 1; done
+max=5
+max=15
+for i in $(seq 1 $max 2); do printf '\r %5d' $i; sleep 1; done
+for i in $(seq 1 $max); do printf '\r %5d' $i; sleep 1; done
+for i in {1..5}; do printf '\r%s %3d' $i $i; sleep 1; done
+for i in {1..5}; do printf '\r%s %3d' $max $i; sleep 1; done
+for i in $(seq 1 5); do printf '\r%s %3d' $max $i; sleep 1; done
+sh compare-cut-awk.sh 
+sh compare-cut-awk.sh 3 10
+cls
+sh compare-cut-awk.sh 3 100
+sh compare-cut-awk.sh 3 50
+vim compare-cut-awk.sh
+sh compare-cut-awk.sh 3 500
+sh compare-cut-awk.sh 5 500
+g discard
+cd cnd-course/
+g add cnd-course.yaml 
+g ci -m 'add minimal course definition based on curriculum outline'
+g amend-message 
+ping 192.168.100.1
+ps aux | awk '$11 == "ping" {print $2}'
+kill -3 18099
+ping --version
+ping -v
+which ping
+ll /sbin/ping
+ps aux | awk '$11 == "ping" {print}'
+kill -l
+man stty
+man ping
+kill -s SIGINFO 38396
+kill -29 38396
+ping -i 5 192.168.100.1
+cd ~/.personal/
+head ping-EXT-1.out 
+ls -al
+ping 192.168.67.1
+man ping
+ping -i 5 192.168.67.1
+head ping-EXT-1.out 
+ls -al
+ping 192.168.67.1
+man ping
+ping -i 5 192.168.67.1
+cp ~/.git?* .
+cp ~/*.sql .
+cp -r ~/bin .
+s t
+g ls
+g br trunk
+g co trunk
+g ci --allow-empty -m 'First!'
+g br -m trunk
+g add -a
+g add -A
+g st
+g st 
+cd ci -m 'much junk'
+g push
+g push -u
+g upp
+ls
+exit
+g st 
+cd ci -m 'much junk'
+g push
+g push -u
+g upp
+exit
+mv 00-cnd-cohorts/{,__}json/
+ls
+learn preview -o .
+cd 00-cnd-cohorts/__json/
+js -f ../../api-to-toc.jq api-cohort-curriculum-1550.json 
+g st
+g df
+g df ../../api-to-toc.jq
+cls
+jq -f ../../api-to-toc.jq api-cohort-curriculum-1550.json 
+cls
+vim /Users/perry.branch/_snips.txt 
+pwd
+exit
+g repos
+g remotes
+g st
+g ls
+g remotes
+g st
+exit
+g add -a
+g add -A
+g st 
+cd ci -m 'much junk'
+g push
+g push -u
+exit
+g st 
+cd ci -m 'much junk'
+g push
+g push -u
+exit
+mv 00-cnd-cohorts/{,__}json/
+learn preview -o .
+cd 00-cnd-cohorts/__json/
+js -f ../../api-to-toc.jq api-cohort-curriculum-1550.json 
+g df ../../api-to-toc.jq
+jq -f ../../api-to-toc.jq api-cohort-curriculum-1550.json 
+vim /Users/perry.branch/_snips.txt 
+pwd
+exit
+g repos
+exit
+g rb upstream/master 
+g rba
+cls
+g df upstream/master 
+g rbi upstream/master 
+rm -rf diw
+cd ping
+vim .gitignore 
+g df
+g ci -am 'ignore "out" files'
+cat .gitignore 
+g ls
+g shw
+g shw @~
+rm -r ping
+rm -rf ping
+cd webtorrent/
+rm -r webtorrent/
+rm -rf webtorrent/
+cd tmp-xfr/
+g st
+g br -m main
+g br -u origin/main
+g pusll
+g pull
+ls
+cd ..
+cd ../mydotfiles/
+g upp
+g remotes
+g lga
+g pull
+cd ..
+cd ../mydotfiles/
+ls
+ls -Al
+mv tomcat@ebx tmp-xfr/
+cd tmp-xfr/
+g st
+g remotes
+g upp
+g lga
+kill -3 18099
+ping --version
+ping -v
+which ping
+ll /sbin/ping
+ps aux | awk '$11 == "ping" {print}'
+kill -l
+man stty
+man ping
+kill -s SIGINFO 38396
+kill -29 38396
+ping -i 5 192.168.100.1
+cd ~/.personal/
+head ping-EXT-1.out 
+ls -al
+ping 192.168.67.1
+man ping
+ping -i 5 192.168.67.1
+cls
+cd ..
+cd cohort-analysis/
+g status
+gh create --private
+gh repo create --private
+gh repo help
+gh repo view
+g push
+g upp
+g push origin main:trunk
+g br -m trunk
+g br -m main
+ls
+code .
+brew info barrier
+brew upgrade barrier
+man ifconfig
+vim /Users/perry.branch/.personal/tmp-xfr/cog-evals.md 
+g add 00-cnd-cohorts/
+g ci -m 'hide raw JSON from Learn'
+g remotes
+g df
+cat api-to-toc.jq | pbcopy
+g st
+g ls
+cat api-to-toc.jq 
+cat 00-cnd-cohorts/__json/api-cohort-curriculum-1432.json 
+cat 00-cnd-cohorts/__json/api-cohort-curriculum-1432.json | pbcopy
+vim api-to-toc.jq 
+kill -29 38396
+ping -i 5 192.168.100.1
+cd ~/.personal/
+head ping-EXT-1.out 
+ls -al
+ping 192.168.67.1
+man ping
+ping -i 5 192.168.67.1
+if
+ifconfig -4
+ifconfig | grep inet
+ip
+ipconfig -3
+ipconfig -4
+tldr ipconfig
+ipconfig
+ipconfig getifaddr
+ifconfig
+tldr ifconfig
+ifconfig -l inet
+ifconfig -lu inet
+ifconfig en0
+ifconfig | grep 'inet '
+ifconfig en0 | grep 'inet '
+ifconfig en0 inet
+cd
+cls
+bash
+ls
+cd mydotfiles/
+g st
+g lga
+g upp
+g remotes
+cd ..
+ls .personal
+ls -al .personal/
+ls -Al .personal/
+cd .personal/
+code .
+ls
+exit
+cd .personal/tmp-xfr/
+g ci -m 'much junk'
+g push
+g ls
+pwd
+g st
+g lga
+code .
+ls
+exit
+cd .personal/tmp-xfr/
+g ci -m 'much junk'
+g push
+g ls
+pwd
+g m upstream/master 
+g ma
+g merge --abort
+g tag simplicity origin/master
+g co master
+g hardreset upstream/master 
+g remotes
+g push origin @:refs/heads/main
+g br -m main
+g br -u upstream/master 
+g lga
+cls
+g br -d improve-examples 
+g push origin :improve-examples
+g upp
+g st

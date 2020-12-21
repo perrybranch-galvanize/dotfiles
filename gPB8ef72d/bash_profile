@@ -1,0 +1,11 @@
+echo "===> .bash_profile"
+
+[[ -e ~/.bashrc ]] && . ~/.bashrc
+
+[[ -d ~/bin ]] && export PATH="~/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/perry.branch/.sdkman"
+[[ -s "/Users/perry.branch/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/perry.branch/.sdkman/bin/sdkman-init.sh"
