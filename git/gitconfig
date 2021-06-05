@@ -1,23 +1,22 @@
 [user]
-	name = Perry A Branch
-	email = github@notrashmail.com
+	name = Perry Branch
+	email = perryb@mailinator.com
 [core]
-	excludesFile = ~/.gitignore_global
+	excludesfile = /Users/perry/.cvsignore
 
 ### GitHub
 
 #[url "https://caa3c62781f3be0e5826d8913e8bdcb76dc7d73a@github.com/"]
 #	insteadOf = https://nossh@github.com/
+
 [url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
-[url "ssh://git@github.com/"]
+	insteadof = https://github.com/
 	insteadOf = gh:
 
 ### BitBucket
 
-[url "ssh://git@bitbucket.com/"]
-	insteadOf = https://bitbucket.com/
 [url "ssh://git@bitbucket.org/"]
+	insteadOf = https://bitbucket.org/
 	insteadOf = bb:
 
 [alias]
@@ -43,27 +42,29 @@
 	gcfg = config --global
 
 	df = diff -M -w
+	dfu = diff -M -w -R @{u}
 	dfw = diff -M -w --word-diff
-	dfc = diff --find-renames --ignore-all-space --cached
-	dfcw = diff --find-renames --ignore-all-space --word-diff --cached
+	dfc = df --cached
+	dfcu = dfu --cached
+	dfcw = dfw --cached
 	changed = diff --find-renames --ignore-all-space --name-status
 	dfsm = diff --find-renames --ignore-all-space --submodule --ignore-submodules=none
 	dt = difftool
 	dty = difftool -y
 
-	lg = log --graph --oneline --decorate -15
-	lga = log --all --oneline --graph --decorate
-	lgu = log --graph --oneline --decorate @{u}^..
-	ls = log --pretty=format:%C(yellow)%h\\ %C(green)[%ad]%C(auto)%d\\ %Creset%s%Cblue\\ [%an] --decorate --date=relative -15
-	lsu = ls @{u}^..
+	lg = log --oneline --graph -15
+	lga = log --all --oneline --graph
+	lgu = lg @{u}^..
+	ls = log --pretty=format:%C(yellow)%h\\ %C(green)[%ad]%C(auto)%d\\ %Creset%s%Cblue\\ [%an] --date=relative -10
+	lsu = ls @{u}^.. -100000
 	lsg = ls --graph
-	ll = log --pretty=format:%C(yellow)%h%C(auto)%d\\ %Creset%s%Cblue\\ [%an|%ad] --decorate --numstat --summary --date=relative -10
+	ll = log --pretty=format:%C(yellow)%h%C(auto)%d\\ %Creset%s%Cblue\\ [%an|%ad] --numstat --summary --date=relative -5
 	llu = ll @{u}^..
-	lu = log --oneline --decorate @{u}^..
+	lu = log --oneline @{u}^..
 	lc = "!f() { git ll $1^..$1; }; f"
 	lnc = log --pretty=format:%h\\ %s\\ [%cn]
-	fl = log -u
 	filelog = log -u
+	fl = filelog
 #	log = log --simplify-merges
 
 	m = merge
@@ -80,7 +81,7 @@
 	up = remote update
 	upp = remote update -p
 
-	forcepush = push --force-with-lease
+	force-push = push --force-with-lease
 
 	discard = reset --hard HEAD^
 	hardreset = reset --hard
@@ -88,12 +89,13 @@
 	undo = reset ORIG_HEAD
 
 	shw = show -M -w
-	last = show -s
+	last = show
 
 	pop = stash pop
 	st = status -sb
 	swap = checkout @{-1}
 	tags = tag -l
+	wt = worktree
 [color]
 	ui = auto
 [column]
@@ -102,6 +104,10 @@
 	autocrlf = input
 	safecrlf = warn
 	ignorecase = false
+#[credential]
+#	helper = osxkeychain
+#[init]
+#	defaultBranch = master
 [interactive]
 	singlekey = true
 [merge]
@@ -124,7 +130,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-#[credential]
-#	helper = osxkeychain
-[init]
-	defaultBranch = main
+[branch "master"]
+	remote = upstream
+	pushRemote = origin

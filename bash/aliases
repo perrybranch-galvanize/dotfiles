@@ -10,7 +10,7 @@ alias cls="clear"
 alias ..='cd ..'
 alias ...='cd ..; cd ..'
 
-alias ls='ls --color=tty'
+alias ls='ls -F'
 alias l.='ls -d .*'
 alias ll.='ls -dl .*'
 alias la='ls -A'

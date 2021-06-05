@@ -1,12 +1,23 @@
-# .bash_profile
+echo "==> .bash_profile"
 
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+# MacOS Catalina or later uses ZSH as default shell and whines if you use bash
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Add personal bin directories to PATH
+for bin_dir in {$HOME/bin,$HOME/.local/bin,$HOME/go/bin}; do
+	[ -d "$bin_dir" ] && export PATH="$bin_dir:$PATH"
+done
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+[[ -r "$HOME/.bashrc" ]] && . "$HOME/.bashrc"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh";
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/perry/.sdkman"
+[[ -s "/Users/perry/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/perry/.sdkman/bin/sdkman-init.sh"
+
+# Use "if" so that the exit code for the script is 0 even if the file doesn't exist
+if [ -r "$HOME/.secrets" ]; then
+       . "$HOME/.secrets"
 fi
-
-# User specific environment and startup programs
-
-PATH=$PATH:$HOME/bin
-
-export PATH
