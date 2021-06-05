@@ -1,0 +1,1 @@
+alias brewed='sort <(brew leaves; brew list --cask)'
